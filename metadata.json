@@ -1,0 +1,5 @@
+{
+  "name": "MicroLED Insight",
+  "description": "Real-time AI summaries of MicroLED technology news across major global markets, powered by Gemini Search Grounding.",
+  "requestFramePermissions": []
+}
