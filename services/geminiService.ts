@@ -1,11 +1,10 @@
 import { GoogleGenAI } from "@google/genai";
 import { NewsData, Region, Source } from '../types';
 
-// Initialize the Gemini API client
-// Note: process.env.API_KEY is expected to be available in the environment
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+export const fetchMicroLEDNews = async (apiKey: string, region: Region): Promise<NewsData> => {
+  // Initialize the Gemini API client with the provided key
+  const ai = new GoogleGenAI({ apiKey });
 
-export const fetchMicroLEDNews = async (region: Region): Promise<NewsData> => {
   try {
     const prompt = `
       Perform a Google Search to find the absolute latest news, business reports, and technological breakthroughs regarding MicroLED technology specifically in ${region}.
